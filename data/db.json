@@ -17,15 +17,6 @@
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "500",
       "stock": "47"
-    },
-    {
-      "id": "2b66",
-      "name": "TEst Product 1",
-      "description": "fjkasgdfk asd fbasdk falshdf ahsdvf ha sdlh ",
-      "oldprice": "1000",
-      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "780",
-      "stock": "258"
     }
   ]
 }
