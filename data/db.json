@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": "8cc9",
+      "name": "Bluetooth Speaker V2.0",
+      "description": "Bluetooth Speaker V2.0",
+      "oldprice": 1600,
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "1450",
+      "stock": "72"
+    },
+    {
+      "id": "e3be",
+      "name": "Test",
+      "description": "Test 1 `",
+      "oldprice": "449",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "500",
+      "stock": "47"
+    },
+    {
+      "id": "2b66",
+      "name": "TEst Product 1",
+      "description": "fjkasgdfk asd fbasdk falshdf ahsdvf ha sdlh ",
+      "oldprice": "1000",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "780",
+      "stock": "258"
+    }
+  ]
+}
