@@ -7,17 +7,18 @@ import {
   Button,
   Container,
   Badge,
+  IconButton,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { DarkMode, LightMode } from "@mui/icons-material";
 
-const pages = ["Products", "Add Products", "Cart", "Profile" , "SignUp"];
+const pages = ["Products", "Add Products", "Cart", "Profile", "SignUp"];
 
-function Navbar() {
-  const cartProducts = useSelector((state) => state.cart);
-  const navigate = useNavigate();
+function Navbar({ darkMode, setDarkMode }) {
   const cartItems = useSelector((state) => state.cart);
   const cartCount = cartItems.length;
+  const navigate = useNavigate();
 
   return (
     <AppBar position="static">
@@ -50,6 +51,9 @@ function Navbar() {
                 </Button>
               );
             })}
+            <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
+              {darkMode ? <LightMode /> : <DarkMode />}
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
