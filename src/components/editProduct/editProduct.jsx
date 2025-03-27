@@ -12,6 +12,7 @@ const EditProducts = () => {
     name: "",
     description: "",
     price: "",
+    oldprice:"",
     stock: "",
   });
 
@@ -86,7 +87,7 @@ const EditProducts = () => {
               onChange={handleChange}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <TextField
               label="Price"
               variant="outlined"
@@ -97,7 +98,18 @@ const EditProducts = () => {
               onChange={handleChange}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
+            <TextField
+              label="oldprice"
+              variant="outlined"
+              type="number"
+              fullWidth
+              name="oldprice"
+              value={product.oldprice}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={4}>
             <TextField
               label="Stock"
               variant="outlined"

@@ -6,14 +6,14 @@
       "description": "Bluetooth Speaker V2.0",
       "oldprice": 1600,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "1450",
+      "price": "145",
       "stock": "72"
     },
     {
       "id": "e3be",
       "name": "Test",
       "description": "Test 1 `",
-      "oldprice": "449",
+      "oldprice": "44000",
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "500",
       "stock": "47"
@@ -22,9 +22,9 @@
       "id": "ed84",
       "name": "ASD",
       "description": "ASD",
-      "oldprice": "7500",
+      "oldprice": "12",
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "2700",
+      "price": "2",
       "stock": "55"
     }
   ]
