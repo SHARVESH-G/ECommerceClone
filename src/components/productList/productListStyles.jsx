@@ -7,6 +7,7 @@ const productListStyles = {
     textAlign: "center",
     border:'2px solid grey',
     backgroundColor:'white',
+    borderRadius:'15px',
   },
   inStock: {
     color: "green",
@@ -41,6 +42,9 @@ const productListStyles = {
       margin:'0 10px',
     }
   },
+  img:{
+    borderRadius:'15px',
+  }
 };
 
 export default productListStyles;

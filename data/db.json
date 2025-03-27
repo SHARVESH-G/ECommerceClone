@@ -80,6 +80,15 @@
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "499",
       "stock": "25"
+    },
+    {
+      "id": "f5ef",
+      "name": "Bluetooth Speaker V2.0",
+      "description": "df",
+      "oldprice": "321",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "123",
+      "stock": "23"
     }
   ]
 }
