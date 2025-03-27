@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Grid,
@@ -10,6 +10,7 @@ import {
   Alert,
   Snackbar,
   CardMedia,
+  TextField
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../custom hooks/useFetch";
@@ -21,6 +22,7 @@ import { addProduct } from "../store/cartSlice";
 const ProductList = () => {
   const { datas: initialProducts, error, isload } = useFetch("http://localhost:8080/products");
   const [products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // New state for search query
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const navigate = useNavigate();
@@ -31,6 +33,10 @@ const ProductList = () => {
       setProducts(initialProducts);
     }
   }, [initialProducts]);
+  
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -55,88 +61,94 @@ const ProductList = () => {
     });
   };
 
-  let cartContain = useSelector( (state)=> { return state.cart } )
+  let cartContain = useSelector((state) => state.cart);
 
-  let addProtoCart =(product) => {
-    let checkProduct = cartContain.some(cartIts=> cartIts.id === product.id)
-    if(!checkProduct){
+  const addProtoCart = (product) => {
+    let checkProduct = cartContain.some(cartIts => cartIts.id === product.id);
+    if (!checkProduct) {
       dispatch(addProduct(product));
       Swal.fire({
-        title:"Success",
-        text:"Product Added To Cart !",
-        icon:"success", 
-      })
-    }
-    else{
+        title: "Success",
+        text: "Product Added To Cart!",
+        icon: "success",
+      });
+    } else {
       Swal.fire("Product Already In Cart");
     }
     setOpenSnackbar(true);
-  }
+  };
 
   const viewProduct = (product) => {
     navigate(`/product/${product.id}`, { state: { product } });
   };
-  
-  
 
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
 
-  if (isload) return <CircularProgress />;
+  if (isload) return <CircularProgress sx={{ display: "block", margin: "auto" }} />;
   if (error) return <Typography color="error">Error: {error}</Typography>;
 
   if (!products || products.length === 0) {
-    return (
-      <Alert variant="outlined" severity="info">
-        No Products To List
-      </Alert>
-    );
+    return <Alert variant="outlined" severity="info">No Products To List</Alert>;
   }
 
   return (
     <>
+      <Box sx={{ display: "flex", justifyContent: "center", mb: 3 ,mt:5}}>
+        <TextField
+          label="Search Products"
+          variant="outlined"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          sx={{ width: "50%" }}
+        />
+      </Box>
+
       <Grid container spacing={3} sx={productListStyles.container}>
-        {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-            <Paper elevation={3} sx={productListStyles.paper}>
-              <Typography variant="body1" sx={productListStyles.id}>#{product.id}</Typography>
-              <CardMedia component="img" height="194" image={product.img} alt={product.name}/>
-              <Typography variant="h6">{product.name}</Typography>
-              <Typography variant="body1" color="textSecondary" sx={productListStyles.description}>
-                {product.description?.length > 50
-                  ? `${product.description.substring(0, 50)}...`
-                  : product.description}
-              </Typography>
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+              <Paper elevation={3} sx={productListStyles.paper}>
+                <Typography variant="body1" sx={productListStyles.id}>#{product.id}</Typography>
+                <CardMedia component="img" height="194" image={product.img} alt={product.name} />
+                <Typography variant="h6">{product.name}</Typography>
+                <Typography variant="body1" color="textSecondary" sx={productListStyles.description}>
+                  {product.description?.length > 50
+                    ? `${product.description.substring(0, 50)}...`
+                    : product.description}
+                </Typography>
 
-              <Typography variant="h6" color="primary">
-                {product.oldprice && parseInt(product.oldprice) > parseInt(product.price) ? (
-                  <>
-                    <strike style={productListStyles.strike}>Rs.{product.oldprice}</strike> Rs.{product.price}
-                  </>
-                ) : (
-                  <>Rs.{product.price}</>
-                )}
-              </Typography>
+                <Typography variant="h6" color="primary">
+                  {product.oldprice && parseInt(product.oldprice) > parseInt(product.price) ? (
+                    <>
+                      <strike style={productListStyles.strike}>Rs.{product.oldprice}</strike> Rs.{product.price}
+                    </>
+                  ) : (
+                    <>Rs.{product.price}</>
+                  )}
+                </Typography>
 
-
-
-              <Typography
-                variant="body2"
-                sx={product.stock && product.stock > 0 ? productListStyles.inStock : productListStyles.outOfStock}
-              >
-                {product.stock && product.stock > 0 ? `In Stock: ${product.stock}` : "Out of Stock"}
-              </Typography>
-              <Box sx={productListStyles.btndiv}>
-                <Button variant="outlined" color="primary" onClick={() => navigate(`/editproducts/${product.id}`)}>Edit</Button>
-                <Button variant="outlined" color="error" onClick={() => handleDelete(product.id)}>Delete</Button>
-                <Button variant="outlined" color="secondary" onClick={() => addProtoCart(product)}>Add To Cart</Button>
-                <Button variant="text" sx={{border:'black 0.8px solid' , color:'black'}} onClick={() => viewProduct(product)}>View</Button>
-              </Box>
-            </Paper>
-          </Grid>
-        ))}
+                <Typography
+                  variant="body2"
+                  sx={product.stock && product.stock > 0 ? productListStyles.inStock : productListStyles.outOfStock}
+                >
+                  {product.stock && product.stock > 0 ? `In Stock: ${product.stock}` : "Out of Stock"}
+                </Typography>
+                <Box sx={productListStyles.btndiv}>
+                  <Button variant="outlined" color="primary" onClick={() => navigate(`/editproducts/${product.id}`)}>Edit</Button>
+                  <Button variant="outlined" color="error" onClick={() => handleDelete(product.id)}>Delete</Button>
+                  <Button variant="outlined" color="secondary" onClick={() => addProtoCart(product)}>Add To Cart</Button>
+                  <Button variant="text" sx={{ border: 'black 0.8px solid', color: 'black' }} onClick={() => viewProduct(product)}>View</Button>
+                </Box>
+              </Paper>
+            </Grid>
+          ))
+        ) : (
+          <Typography variant="h6" sx={{ textAlign: "center", width: "100%" }}>No Products Found</Typography>
+        )}
       </Grid>
+
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={openSnackbar}
@@ -147,7 +159,7 @@ const ProductList = () => {
             View Cart
           </Button>
         }
-        autoHideDuration={3000}
+        autoHideDuration={300}
       />
     </>
   );

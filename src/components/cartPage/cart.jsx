@@ -22,7 +22,7 @@ const CartList = () => {
 
   if (!cartProducts || cartProducts.length === 0) {
     return (
-      <Alert variant="outlined" severity="info">
+      <Alert variant="outlined" severity="info" sx={{mt:25 , mr:20 ,ml:20}}>
         No Products In Cart
       </Alert>
     );

@@ -3,56 +3,83 @@
     {
       "id": "8cc9",
       "name": "Bluetooth Speaker V2.0",
-      "description": "Bluetooth Speaker V2.0",
-      "oldprice": 1600,
+      "description": "High-quality Bluetooth speaker with deep bass and clear sound.",
+      "oldprice": 122600,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "145",
       "stock": "72"
     },
     {
-      "id": "e3be",
-      "name": "Test",
-      "description": "Test 1 `",
-      "oldprice": "44000",
+      "id": "9dde",
+      "name": "Wireless Headphones X1",
+      "description": "Noise-canceling wireless headphones with 30-hour battery life.",
+      "oldprice": "299",
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "500",
-      "stock": "47"
+      "price": "199",
+      "stock": "35"
     },
     {
-      "id": "ed84",
-      "name": "ASD",
-      "description": "ASD",
-      "oldprice": "12",
+      "id": "7af8",
+      "name": "Gaming Mouse Pro",
+      "description": "Ergonomic gaming mouse with RGB lighting and 7 programmable buttons.",
+      "oldprice": 5999,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "2",
-      "stock": "55"
+      "price": "79",
+      "stock": "120"
     },
     {
-      "id": "6d08",
-      "name": "Yest",
-      "description": "Food",
-      "oldprice": "400",
+      "id": "3bb2",
+      "name": "Mechanical Keyboard RGB",
+      "description": "Mechanical keyboard with customizable RGB lighting and blue switches.",
+      "oldprice": 7999,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "380",
-      "stock": "77"
+      "price": "129",
+      "stock": "50"
     },
     {
-      "id": "852d",
-      "name": "TEst Product 1",
-      "description": "pflsdofhsd fhsadhfgsdhfg ash",
-      "oldprice": "400",
+      "id": "6ccd",
+      "name": "Smart Watch S3",
+      "description": "Smartwatch with heart rate monitoring and fitness tracking features.",
+      "oldprice": 14999,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "350",
-      "stock": "787"
+      "price": "249",
+      "stock": "20"
     },
     {
-      "id": "d285",
-      "name": "TEst Product 1",
-      "description": "sasdas asdas as as as da das das ",
-      "oldprice": "400",
+      "id": "4dde",
+      "name": "Portable Power Bank 20,000mAh",
+      "description": "High-capacity power bank with fast charging support.",
+      "oldprice": 3999,
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "price": "350",
-      "stock": "787"
+      "price": "59",
+      "stock": "85"
+    },
+    {
+      "id": "5eef",
+      "name": "4K Action Camera",
+      "description": "Waterproof 4K action camera with wide-angle lens.",
+      "oldprice": 19999,
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "299",
+      "stock": "15"
+    },
+    {
+      "id": "2a99",
+      "name": "Noise-Canceling Earbuds",
+      "description": "Wireless earbuds with active noise cancellation and high-fidelity audio.",
+      "oldprice": 6999,
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "89",
+      "stock": "60"
+    },
+    {
+      "id": "1ccd",
+      "name": "Curved Gaming Monitor 27\"",
+      "description": "27-inch curved gaming monitor with 144Hz refresh rate and 1ms response time.",
+      "oldprice": 34999,
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "499",
+      "stock": "25"
     }
   ]
 }
