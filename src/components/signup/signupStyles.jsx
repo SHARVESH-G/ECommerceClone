@@ -1,10 +1,14 @@
 const signupStyles = {
     paper: {
-        width: "800px",
+        width: "fit-content",
         padding: "25px",
         borderRadius: "20px",
         display: "grid",
-        gap:'20px'
+        gap:'20px',
+        "&>*":{
+            width:'350px',
+            varient:'Standard',
+        }
     },
     container: {
         height: "100vh",
@@ -13,10 +17,10 @@ const signupStyles = {
         alignItems: "center",
     },
     signupBtn:{
-        fontWeight:'800',
+        fontWeight:'500',
         width:'50%',
-        height:'75px',
-        fontSize:'25px',
+        height:'55px',
+        fontSize:'20px',
         justifySelf:'center',
     },
     hero:{

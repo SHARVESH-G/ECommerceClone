@@ -59,11 +59,11 @@ const signup = () => {
     <Box sx={SStyle.container}>
         <Paper elevation={10} sx={SStyle.paper} component="form" onSubmit={handleSubmit(handleData)}>
             <Typography variant='h6' sx={SStyle.hero}> Create Your Account </Typography>
-            <TextField label="Name" { ...register( "name" ) } fullWidth error={!!errors.name} helperText={errors.name?.message}/>
-            <TextField label="Email" { ...register( "email" ) } fullWidth error={!!errors.email} helperText={errors.email?.message}/>
-            <TextField label="Age" { ...register( "age" ) } fullWidth error={!!errors.age} helperText={errors.age?.message}/>
-            <TextField label="Password" { ...register( "password" ) } fullWidth error={!!errors.password} helperText={errors.password?.message}/>
-            <TextField label="Confirm Password" { ...register( "cpassword" ) } fullWidth error={!!errors.cpassword} helperText={errors.cpassword?.message}/>
+            <TextField label="Name" variant='standard' { ...register( "name" ) } fullWidth error={!!errors.name} helperText={errors.name?.message}/>
+            <TextField label="Email" variant='standard' { ...register( "email" ) } fullWidth error={!!errors.email} helperText={errors.email?.message}/>
+            <TextField label="Age" variant='standard' { ...register( "age" ) } fullWidth error={!!errors.age} helperText={errors.age?.message}/>
+            <TextField label="Password" variant='standard' { ...register( "password" ) } fullWidth error={!!errors.password} helperText={errors.password?.message}/>
+            <TextField label="Confirm Password" variant='standard' { ...register( "cpassword" ) } fullWidth error={!!errors.cpassword} helperText={errors.cpassword?.message}/>
             <Button variant='outlined' type='submit' sx={SStyle.signupBtn}>Sign Up</Button>
             <Typography sx={SStyle.hero}>Already have an Account</Typography>
             <Button variant='outlined' sx={SStyle.signupBtn} onClick={gotoProducts}>Sign In</Button>

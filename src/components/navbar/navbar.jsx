@@ -27,6 +27,7 @@ function Navbar({ darkMode, setDarkMode }) {
     Swal.fire({
       title:"Are you Sure?",
       text:"Do you want to logout?",
+      icon:'question',
       showCancelButton:true,
       cancelButtonText:"cancel",
       confirmButtonText:"Confirm",
