@@ -38,9 +38,7 @@ const productListStyles = {
     justifySelf:'center',
     marginTop:'15px',
     "&>*":{
-      margin:'0 5px',
-      padding:'9px',
-      fontWeight:'500',
+      margin:'0 10px',
     }
   },
 };

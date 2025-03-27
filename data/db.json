@@ -26,6 +26,24 @@
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "2",
       "stock": "55"
+    },
+    {
+      "id": "6d08",
+      "name": "Yest",
+      "description": "Food",
+      "oldprice": "400",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "380",
+      "stock": "77"
+    },
+    {
+      "id": "852d",
+      "name": "TEst Product 1",
+      "description": "pflsdofhsd fhsadhfgsdhfg ash",
+      "oldprice": "400",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "350",
+      "stock": "787"
     }
   ]
 }

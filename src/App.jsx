@@ -8,16 +8,16 @@ import EditProduct from "./components/editProduct/editProduct";
 import Cart from "./components/cartPage/cart";
 import Profile from "./components/profile/profile";
 import Signup from "./components/signup/signup";
+import ProductDetail from "./components/productDetail/productDetail";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
 if (!localStorage.getItem("cart")) {
   localStorage.setItem("cart", JSON.stringify([]));
 }
-if(localStorage.getItem("login") == null){
-  localStorage.setItem("login" , JSON.stringify(false));
+if (localStorage.getItem("login") == null) {
+  localStorage.setItem("login", JSON.stringify(false));
 }
-
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,12 +28,13 @@ function App() {
     },
   });
 
-  const NavBar = <MUINav darkMode={darkMode} setDarkMode={setDarkMode} />
+  const NavBar = <MUINav darkMode={darkMode} setDarkMode={setDarkMode} />;
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppRoute>
-        { JSON.parse(localStorage.getItem("login")) ? NavBar : <Signup /> }
+        {JSON.parse(localStorage.getItem("login")) ? NavBar : <Signup />}
         <Routes>
           <Route path="addproducts" element={<AddProduct />} />
           <Route path="editproducts/:id" element={<EditProduct />} />
@@ -41,6 +42,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="profile" element={<Profile />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<OTPage />} />
         </Routes>
       </AppRoute>

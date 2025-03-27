@@ -73,6 +73,12 @@ const ProductList = () => {
     setOpenSnackbar(true);
   }
 
+  const viewProduct = (product) => {
+    navigate(`/product/${product.id}`, { state: { product } });
+  };
+  
+  
+
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
@@ -125,6 +131,7 @@ const ProductList = () => {
                 <Button variant="outlined" color="primary" onClick={() => navigate(`/editproducts/${product.id}`)}>Edit</Button>
                 <Button variant="outlined" color="error" onClick={() => handleDelete(product.id)}>Delete</Button>
                 <Button variant="outlined" color="secondary" onClick={() => addProtoCart(product)}>Add To Cart</Button>
+                <Button variant="text" sx={{border:'black 0.8px solid' , color:'black'}} onClick={() => viewProduct(product)}>View</Button>
               </Box>
             </Paper>
           </Grid>
