@@ -17,6 +17,15 @@
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "500",
       "stock": "47"
+    },
+    {
+      "id": "ed84",
+      "name": "ASD",
+      "description": "ASD",
+      "oldprice": "7500",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "2700",
+      "stock": "55"
     }
   ]
 }

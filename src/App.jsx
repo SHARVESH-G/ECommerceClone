@@ -16,7 +16,7 @@ if (!localStorage.getItem("cart")) {
 }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const theme = createTheme({
     palette: {

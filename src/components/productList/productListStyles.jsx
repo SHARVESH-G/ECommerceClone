@@ -33,7 +33,16 @@ const productListStyles = {
     fontSize:'8px',
     color:'grey',
     textAlign:'end',
-  }
+  },
+  btndiv:{
+    justifySelf:'center',
+    marginTop:'15px',
+    "&>*":{
+      margin:'0 5px',
+      padding:'9px',
+      fontWeight:'500',
+    }
+  },
 };
 
 export default productListStyles;

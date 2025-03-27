@@ -5,6 +5,7 @@ import SStyle from './signupStyles'
 import * as Yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 let formFormate = Yup.object().shape({
@@ -31,8 +32,21 @@ const signup = () => {
     let {register , handleSubmit , formState:{errors}} = useForm({resolver:yupResolver(formFormate)})
     let navi = useNavigate()
     const handleData=(data)=>{
-        alert("LoggedIn Successfully")
-        navi("/products")
+        Swal.fire({
+            title:"Success",
+            icon:'success',
+            text:"Account created Successfully Redirect to Store ?",
+            showCancelButton:true,
+            confirmButtonText:"Go to Store",
+            cancelButtonText:"Stay On Signup Page",
+            confirmButtonColor:'#3085d6',
+            cancelButtonColor:'#d33',
+        })
+        .then((result)=>{
+            if(result.isConfirmed){
+                navi("/products")
+            }
+        })
     }
     const gotoProducts=()=>{
         navi("/profile")

@@ -64,7 +64,7 @@ const ProductList = () => {
       Swal.fire({
         title:"Success",
         text:"Product Added To Cart !",
-        icon:"success",
+        icon:"success", 
       })
     }
     else{
@@ -122,9 +122,9 @@ const ProductList = () => {
                 {product.stock && product.stock > 0 ? `In Stock: ${product.stock}` : "Out of Stock"}
               </Typography>
               <Box sx={productListStyles.btndiv}>
-                <Button color="primary" onClick={() => navigate(`/editproducts/${product.id}`)}>Edit</Button>
-                <Button color="error" onClick={() => handleDelete(product.id)}>Delete</Button>
-                <Button color="secondary" onClick={() => addProtoCart(product)}>Add To Cart</Button>
+                <Button variant="outlined" color="primary" onClick={() => navigate(`/editproducts/${product.id}`)}>Edit</Button>
+                <Button variant="outlined" color="error" onClick={() => handleDelete(product.id)}>Delete</Button>
+                <Button variant="outlined" color="secondary" onClick={() => addProtoCart(product)}>Add To Cart</Button>
               </Box>
             </Paper>
           </Grid>
