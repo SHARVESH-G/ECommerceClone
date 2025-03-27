@@ -44,6 +44,8 @@ const signup = () => {
         })
         .then((result)=>{
             if(result.isConfirmed){
+                localStorage.setItem("login" , JSON.stringify(true));
+                window.location.reload()
                 navi("/products")
             }
         })

@@ -14,6 +14,10 @@ import { CssBaseline } from "@mui/material";
 if (!localStorage.getItem("cart")) {
   localStorage.setItem("cart", JSON.stringify([]));
 }
+if(localStorage.getItem("login") == null){
+  localStorage.setItem("login" , JSON.stringify(false));
+}
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,11 +28,12 @@ function App() {
     },
   });
 
+  const NavBar = <MUINav darkMode={darkMode} setDarkMode={setDarkMode} />
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppRoute>
-        <MUINav darkMode={darkMode} setDarkMode={setDarkMode} />
+        { JSON.parse(localStorage.getItem("login")) ? NavBar : <Signup /> }
         <Routes>
           <Route path="addproducts" element={<AddProduct />} />
           <Route path="editproducts/:id" element={<EditProduct />} />
