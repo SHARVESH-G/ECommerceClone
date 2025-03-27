@@ -44,6 +44,15 @@
       "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "price": "350",
       "stock": "787"
+    },
+    {
+      "id": "d285",
+      "name": "TEst Product 1",
+      "description": "sasdas asdas as as as da das das ",
+      "oldprice": "400",
+      "img": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "price": "350",
+      "stock": "787"
     }
   ]
 }
